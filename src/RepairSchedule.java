@@ -49,11 +49,11 @@ public class RepairSchedule
         for (int i = 0; i < numberOfMechanics; i++)
         {
             avaiableNums.add(i);
-            for (int j = i; i < numberOfMechanics; j++)
+            for (int j = 0; j < schedule.size(); j++)
             {
                 if (schedule.get(j).getMechanicNum() == i)
                 {
-                    avaiableNums.remove(i);
+                    avaiableNums.remove(avaiableNums.size() - 1);
                 }
             }
         }
