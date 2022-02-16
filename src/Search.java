@@ -70,16 +70,25 @@ public class Search {
     // target int, and return the LAST index at which the target is found,
     // or return -1 if target is not found
     public static int linearSearchLast (int[] array, int target) {
-        int index = 0;
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] == target) {
-                index = i;
+//        int index = 0;
+//        for (int i = 0; i < array.length; i++) {
+//            if (array[i] == target) {
+//                index = i;
+//            }
+//        }
+//        if (index == 0) {
+//            return -1;
+//        }
+//        return index;
+
+        for(int i = array.length - 1; i > 0; i--)
+        {
+            if (array[i] == target)
+            {
+                return i;
             }
         }
-        if (index == 0) {
-            return -1;
-        }
-        return index;
+        return -1;
     }
 
 
@@ -87,8 +96,29 @@ public class Search {
     // accepts an array of ints and a target int, and the other that accepts an ArrayList
     // of Integers and a target int.  Each method should return the NUMBER OF TIMES
     // the target appears in the array/ArrayList.
+    public static int linearSearchCount(int[] nums, int target)
+    {
+        int count = 0;
+        for (int search : nums)
+        {
+            if (search == target)
+            {
+                count++;
+            }
+        }
+        return count;
+    }
 
-
-
-
+    public static int linearSearchCount(ArrayList<Integer> nums, int target)
+    {
+        int count = 0;
+        for (Integer search : nums)
+        {
+            if (search == target)
+            {
+                count++;
+            }
+        }
+        return count;
+    }
 }
